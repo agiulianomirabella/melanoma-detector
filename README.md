@@ -1,2 +1,2 @@
 # Melanoma Detector
-AI and DIP Techniques in Melanoma Detection
+AI and Digital Images Processing Techniques in Melanoma Detection
