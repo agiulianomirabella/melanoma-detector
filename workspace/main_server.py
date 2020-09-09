@@ -1,5 +1,5 @@
-from root.final.detector.detector import detector_exp
+from root.final.detector.detector import create_detector_train_test
 
-detector_exp('prueba0', 0)
-detector_exp('prueba0', 1)
-detector_exp('prueba0', 2)
+create_detector_train_test('prueba0', 2)
+create_detector_train_test('prueba0', 3)
+create_detector_train_test('prueba0', 4)

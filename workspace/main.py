@@ -1,9 +1,8 @@
-from root.final.exp.mlp import create_mlp_experiment
+from root.final.detector.detector import final_detector_mlp
 
-for b in [64, 32]:
-    create_mlp_experiment('prueba_deep_B' + str(b) + '_', 'all', batch_size= b, epochs= 300)
-for b in [16, 8]:
-    create_mlp_experiment('prueba_deep_B' + str(b) + '_', 'all', batch_size= b, epochs= 200)
-for b in [4, 2]:
-    create_mlp_experiment('prueba_deep_B' + str(b) + '_', 'all', batch_size= b, epochs= 100)
-    
+n_exp = 2
+for csv_number in [0, 1, 2, 3, 4]:
+    for b in [128, 64, 32]:
+        final_detector_mlp('exp' + str(n_exp) + '_data' + str(csv_number) + '_B' + str(b), 0, batch_size=b, epochs=200)
+    for b in [16, 8, 4, 2]:
+        final_detector_mlp('exp' + str(n_exp) + '_data' + str(csv_number) + '_B' + str(b), 0, batch_size=b, epochs=100)

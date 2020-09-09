@@ -91,7 +91,7 @@ columns = {
         'sex', 'anatom_site_general_challenge', 'age_approx', 
         'areas_ratio', 'major_axis_weighted_mean', 'minor_axis_weighted_mean', 'eccentricity_mean', 
         'eccentricity_std', 'R_mean', 'G_mean', 'B_mean', 'R_std', 'G_std', 'B_std', 
-        'euler0', 'euler1', 'euler2', 'euler3', 'euler4', 'target'
+        'euler0', 'euler1', 'euler2', 'euler3', 'euler4', 'cnn_prediction', 'target'
     ],
 
     'stats': [

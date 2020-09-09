@@ -10,17 +10,9 @@ METRICS     = ['AUC', 'accuracy']
 
 def get_all_architecture(input_layer):
 
-    x = Dense(16, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(input_layer)
+    x = Dense(22, activation='relu')(input_layer)
+    x = Dense(8, activation='relu', kernel_regularizer= regularizers.l1_l2(l1=0.001, l2=0.001))(x)
     x = Dropout(0.5)(x)
-    x = Dense(12, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(x)
-    x = Dropout(0.5)(x)
-    x = Dense(10, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(x)
-    x = Dropout(0.5)(x)
-    x = Dense(8, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(x)
-    x = Dropout(0.5)(x)
-    x = Dense(4, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(x)
-    x = Dropout(0.25)(x)
-    x = Dense(2, activation='tanh', kernel_regularizer= regularizers.l1_l2(l1=0.01, l2=0.01))(x)
     #x = Dropout(0.5)(x)
     #x = Dense(4, activation='relu', kernel_regularizer= regularizers.l1_l2(l1=0.001, l2=0.001))(x)
     output = Dense(1, activation="sigmoid")(x)

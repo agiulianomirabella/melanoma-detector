@@ -12,11 +12,17 @@ from sklearn.utils.class_weight import compute_class_weight
 CALLBACK_MONITOR = 'val_auc'
 BALANCE_DATA = False
 
-def get_train_valid_dataset(keyword, df, batch_size):
-    aux = df[[c for c in columns[keyword]]]
-    train_ds = dataframe_to_dataset(aux)
+def get_train_valid_dataset(keyword, train_df, valid_df, batch_size):
+    train_aux = train_df[[c for c in columns[keyword]]]
+    valid_aux = valid_df[[c for c in columns[keyword]]]
+
+    train_ds = dataframe_to_dataset(train_aux)
+    valid_ds = dataframe_to_dataset(valid_aux)
+
     train_ds = train_ds.batch(batch_size)
-    return train_ds
+    valid_ds = valid_ds.batch(batch_size)
+
+    return train_ds, valid_ds
 
 def get_input_layer(keyword, train_ds):
     encoded_inputs = []

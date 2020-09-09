@@ -43,7 +43,7 @@ def create_mlp_experiment(model_name, keyword, n_sample= N_SAMPLE, batch_size= B
 
     #df, test_df = readCSV_imbalanced(n_sample)
     df = readCSV(n_sample)
-    skf = StratifiedKFold(n_splits = k, random_state = 7, shuffle = True)
+    skf = StratifiedKFold(n_splits = k, shuffle = True)
     folder = 0
 
     class_weights = get_class_weights(df)

@@ -1,15 +1,7 @@
 from root.utils import * # pylint: disable= unused-wildcard-import
 
-from root.readData import readCSV
+import skimage.io as io
 
-df, test_df = readCSV(1168, test_size=0.1)
-
-
-df.to_csv('../data/output/csv/train2.csv', index= False)
-test_df.to_csv('../data/output/csv/test2.csv', index= False)
-
-
-print(len(df[df['target']==0].index))
-print(len(df[df['target']==1].index))
-print(len(test_df[test_df['target']==0].index))
-print(len(test_df[test_df['target']==1].index))
+image = io.imread('../data/halfway/hr/128/ISIC_0599047_hr.jpg')
+digitized = digitizeToEqualWidth(image, 5)
+displaySeveralImages([image, digitized])

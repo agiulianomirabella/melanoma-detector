@@ -2,11 +2,11 @@ from root.utils import * # pylint: disable= unused-wildcard-import
 
 from root.readData import readCSV
 
-df, test_df = readCSV(20, test_size=0.1)
+df, test_df = readCSV(1168, test_size=0.1)
 
 
-df.to_csv('../data/output/csv/train0.csv')
-test_df.to_csv('../data/output/csv/test0.csv')
+df.to_csv('../data/output/csv/train2.csv', index= False)
+test_df.to_csv('../data/output/csv/test2.csv', index= False)
 
 
 print(len(df[df['target']==0].index))
